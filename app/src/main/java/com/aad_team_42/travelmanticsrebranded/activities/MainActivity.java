@@ -1,8 +1,10 @@
-package com.aad_team_42.travelmanticsrebranded;
+package com.aad_team_42.travelmanticsrebranded.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.aad_team_42.travelmanticsrebranded.R;
 
 public class MainActivity extends AppCompatActivity {
 
