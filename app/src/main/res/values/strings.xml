@@ -6,4 +6,7 @@
     <string name="profile">Profile</string>
     <string name="logout">Logout</string>
     <string name="app_title">Travel Mantics</string>
+    <string name="tour_title">Dubai Airport</string>
+    <string name="tour_detail">Dubai is a very fun place to be with</string>
+    <string name="price">fees $3000</string>
 </resources>

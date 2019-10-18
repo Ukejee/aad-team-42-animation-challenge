@@ -19,6 +19,7 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
+        app:tabIndicatorHeight="3dp"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="center_horizontal"
         android:background="@color/colorPrimary"
