@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="3dp"
-        android:src="@mipmap/app_logo"
+        android:src="@drawable/travis_logo"
         app:layout_constraintBottom_toTopOf="@id/app_name"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline"
