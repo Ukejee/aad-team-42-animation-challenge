@@ -1,3 +1,12 @@
 <resources>
+    <string name="app_logo">logo</string>
     <string name="app_name">TravelMantics</string>
+    <string name="Email_view">Email:</string>
+    <string name="Email_box">Enter your Email</string>
+    <string name="password">Password?</string>
+    <string name="Password_box">Enter your password</string>
+    <string name="Forgot_Password_text">Forgot Password?</string>
+    <string name="Text_Button">Login</string>
+    <string name="No_account">You don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
 </resources>
