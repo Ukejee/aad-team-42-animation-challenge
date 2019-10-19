@@ -19,14 +19,14 @@ import java.util.List;
 interface FavouriteTravelDealDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertFavouriteTravelDeals(TravelDeal... favouriteTravelDeal);
+    void insertFavouriteTravelDeals(FavouriteTravelDeal... favouriteTravelDeal);
 
     @Delete
-    void deleteFavouriteTravelDeal(TravelDeal favouriteTravelDeal);
+    void deleteFavouriteTravelDeal(FavouriteTravelDeal favouriteTravelDeal);
 
     @Query("SELECT * FROM favourite_travel_deals")
-    List<TravelDeal> fetchAllCountries();
+    List<FavouriteTravelDeal> fetchAllCountries();
 
     @Query("SELECT * FROM favourite_travel_deals WHERE title =:travelDealTitle")
-    TravelDeal fetchFavouriteTravalDealByName(String travelDealTitle);
+    FavouriteTravelDeal fetchFavouriteTravalDealByName(String travelDealTitle);
 }
