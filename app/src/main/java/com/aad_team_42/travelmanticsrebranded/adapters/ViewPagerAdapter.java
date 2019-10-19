@@ -1,4 +1,4 @@
-package com.aad_team_42.travelmanticsrebranded.activities.adapters;
+package com.aad_team_42.travelmanticsrebranded.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.aad_team_42.travelmanticsrebranded.activities.fragments.ExploreFragment;
+import com.aad_team_42.travelmanticsrebranded.views.fragments.ExploreFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     public ViewPagerAdapter(FragmentManager fm) {

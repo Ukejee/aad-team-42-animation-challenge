@@ -1,8 +1,4 @@
-package com.aad_team_42.travelmanticsrebranded.models;
-
-import androidx.room.Entity;
-import androidx.room.Ignore;
-import androidx.room.PrimaryKey;
+package com.aad_team_42.travelmanticsrebranded.model;
 
 import java.io.Serializable;
 
