@@ -22,7 +22,7 @@ android:layout_height="match_parent">
         app:srcCompat="@drawable/travis_logo" />
 
     <TextView
-        android:id="@+id/id_textView"
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -37,7 +37,7 @@ android:layout_height="match_parent">
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/id_textView2"
+        android:id="@+id/tv_Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -45,45 +45,45 @@ android:layout_height="match_parent">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editText2"
+        android:id="@+id/et_Email"
         android:layout_width="316dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/dimen_4dp"
         android:ems="10"
         android:hint="@string/Email_box"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Email"
         android:background="@drawable/back"/>
 
     <TextView
-        android:id="@+id/id_Password"
+        android:id="@+id/tv_Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="@string/password"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintStart_toStartOf="@+id/et_Email"
+        app:layout_constraintTop_toBottomOf="@+id/et_Email" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editText4"
         android:layout_width="319dp"
         android:layout_height="47dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/dimen_4dp"
         android:background="@drawable/back"
         android:ems="10"
         android:hint="@string/Password_box"
         android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/id_Password"
-        app:layout_constraintTop_toBottomOf="@+id/id_Password" />
+        app:layout_constraintStart_toStartOf="@+id/tv_Password"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Password" />
 
     <TextView
-        android:id="@+id/id_forgot_password"
+        android:id="@+id/tv_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -110,7 +110,7 @@ android:layout_height="match_parent">
         />
 
     <TextView
-        android:id="@+id/id_no_account"
+        android:id="@+id/tv_no_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -120,7 +120,7 @@ android:layout_height="match_parent">
         app:layout_constraintTop_toBottomOf="@+id/button_login" />
 
     <TextView
-        android:id="@+id/id_sign_up"
+        android:id="@+id/tv_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="55dp"
@@ -128,7 +128,7 @@ android:layout_height="match_parent">
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/button_login"
-        app:layout_constraintTop_toTopOf="@+id/id_no_account" />
+        app:layout_constraintTop_toTopOf="@+id/tv_no_account" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
