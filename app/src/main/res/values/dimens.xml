@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="dimens_25">25dp</dimen>
-    <dimen name="dimens_4">4dp</dimen>
-    <dimen name="dimens_8dp">8dp</dimen>
-    <dimen name="dimens_40">40dp</dimen>
-    <dimen name="dimens_16dp">16dp</dimen>
-    <dimen name="dimen_4dp">4dp</dimen>
-</resources>
