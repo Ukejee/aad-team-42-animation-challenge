@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.aad_team_42.travelmanticsrebranded"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+//        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -26,6 +26,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.android.support:design:23.1.1'
+//    implementation 'com.androidx.support:support-v4:28.0.0'
+//    implementation 'com.androidx.support:support-v7:28.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
 
     //firebase dependencies
     implementation 'com.google.firebase:firebase-core:17.2.0'
@@ -36,6 +40,11 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:4.3.1'
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
     implementation 'com.google.firebase:firebase-storage:19.1.0'
+
+    //Adding the design dependency
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    implemetation 'com.android.support:appcompat-v7:28.0.0'
 }
 
 //apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin

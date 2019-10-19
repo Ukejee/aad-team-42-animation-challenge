@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">TravelMantics</string>
+    <string name="upload_plac">Upload Places</string>
+    <string name="edit_tour">Tour</string>
+    <string name="edit_desc">Description</string>
+    <string name="edit_fees">Fees</string>
+    <string name="img">Choose</string>
+    <string name="tour_name">Tour Name</string>
+    <string name="description">Description</string>
+    <string name="fees">Fees</string>
+    <string name="add_an_imag">Add an image</string>
+    <string name="upload">Upload</string>
+
+
 </resources>
