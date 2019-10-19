@@ -10,6 +10,9 @@
         android:roundIcon="@mipmap/travis_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".views.activities.BaseActivity"/>
+        <activity android:name=".views.activities.LoginActivity"/>
+        <activity android:name=".views.activities.RegisterActivity"/>
         <activity android:name=".views.activities.MainActivity"
             android:theme="@style/MainTheme"/>
         <activity android:name=".views.activities.SplashScreenActivity"

@@ -1,4 +1,4 @@
-package com.aad_team_42.travelmanticsrebranded.activities;
+package com.aad_team_42.travelmanticsrebranded.views.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 

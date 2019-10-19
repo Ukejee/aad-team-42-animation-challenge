@@ -4,9 +4,9 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.aad_team_42.travelmanticsrebranded.activities.MainActivity;
-import com.aad_team_42.travelmanticsrebranded.activities.RegisterActivity;
-import com.aad_team_42.travelmanticsrebranded.activities.LoginActivity;
+import com.aad_team_42.travelmanticsrebranded.views.activities.MainActivity;
+import com.aad_team_42.travelmanticsrebranded.views.activities.RegisterActivity;
+import com.aad_team_42.travelmanticsrebranded.views.activities.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

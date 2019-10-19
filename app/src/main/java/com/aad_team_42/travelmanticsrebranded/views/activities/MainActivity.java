@@ -1,7 +1,6 @@
 package com.aad_team_42.travelmanticsrebranded.views.activities;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
@@ -10,6 +9,7 @@ import android.view.Menu;
 
 import com.aad_team_42.travelmanticsrebranded.R;
 import com.aad_team_42.travelmanticsrebranded.adapters.ViewPagerAdapter;
+import com.aad_team_42.travelmanticsrebranded.utils.FirebaseUtils;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
