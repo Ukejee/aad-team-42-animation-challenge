@@ -22,14 +22,14 @@ public class TravelDeal implements Serializable {
 
     public TravelDeal(){}
 
-    public TravelDeal(String title, String description, String price, String imageUrl, String imageName) {
+    /*public TravelDeal(String title, String description, String price, String imageUrl, String imageName) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.price = price;
         this.imageUrl = imageUrl;
         this.imageName = imageName;
-    }
+    }*/
 
     public int getId() {
         return id;
