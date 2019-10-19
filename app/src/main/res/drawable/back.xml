@@ -10,6 +10,7 @@
         android:width="1dp">
     </stroke>
     <padding
+        android:bottom="15dp"
         android:left="5dp">
     </padding>
 <solid android:color="#fff"/>

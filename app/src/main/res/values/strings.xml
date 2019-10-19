@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_logo">logo</string>
+    <string name="app_logo">app_logo</string>
     <string name="app_name">TravelMantics</string>
     <string name="Email_view">Email:</string>
     <string name="Email_box">Enter your Email</string>
