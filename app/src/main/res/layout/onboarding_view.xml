@@ -38,6 +38,7 @@
         android:id="@+id/getting_started"
         android:layout_width="456dp"
         android:layout_height="86dp"
+        android:layout_marginBottom="@dimen/dimens_32sp"
         android:background="@drawable/onboard_blue_background"
         android:text="@string/started"
         android:textColor="@color/white"
