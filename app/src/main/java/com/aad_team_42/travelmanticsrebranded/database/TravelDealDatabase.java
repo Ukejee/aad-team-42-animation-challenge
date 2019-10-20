@@ -3,8 +3,6 @@ package com.aad_team_42.travelmanticsrebranded.database;
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
-import com.aad_team_42.travelmanticsrebranded.models.TravelDeal;
-
 /**
  * @author .: Ukeje Emeka
  * @email ..: ukejee3@gmail.com

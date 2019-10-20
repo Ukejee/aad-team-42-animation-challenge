@@ -6,8 +6,6 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.aad_team_42.travelmanticsrebranded.models.TravelDeal;
-
 import java.util.List;
 
 import io.reactivex.Completable;

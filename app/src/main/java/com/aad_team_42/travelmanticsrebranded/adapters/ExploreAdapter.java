@@ -1,4 +1,4 @@
-package com.aad_team_42.travelmanticsrebranded.activities.adapters;
+package com.aad_team_42.travelmanticsrebranded.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aad_team_42.travelmanticsrebranded.R;
-import com.aad_team_42.travelmanticsrebranded.activities.model.Explore;
+import com.aad_team_42.travelmanticsrebranded.model.Explore;
 
 import java.util.ArrayList;
 import java.util.List;

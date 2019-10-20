@@ -1,4 +1,4 @@
-package com.aad_team_42.travelmanticsrebranded.activities;
+package com.aad_team_42.travelmanticsrebranded.views.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 
 import com.aad_team_42.travelmanticsrebranded.R;
-import com.aad_team_42.travelmanticsrebranded.activities.adapters.ViewPagerAdapter;
+import com.aad_team_42.travelmanticsrebranded.adapters.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
