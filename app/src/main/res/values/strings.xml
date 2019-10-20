@@ -9,5 +9,13 @@
     <string name="tour_title">Dubai Airport</string>
     <string name="tour_detail">Dubai is a very fun place to be with</string>
     <string name="price">fees $3000</string>
+
     <string name="app_tit">Places and Events</string>
+
+    <string name="started">Getting Started</string>
+    <string name="title"><![CDATA[P & E]]></string>
+    <string name="sub_title">Places and Events</string>
+    <string name="tour_describe">Find the best places to spend your holiday</string>
+    <string name="event_describe">Discover Events and Network with People Around the world</string>
+
 </resources>
