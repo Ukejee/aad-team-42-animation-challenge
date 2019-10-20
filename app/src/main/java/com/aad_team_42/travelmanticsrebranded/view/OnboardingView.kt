@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.aad_team_42.travelmanticsrebranded.R
+import com.aad_team_42.travelmanticsrebranded.views.activities.ChooseSignIn
 import com.aad_team_42.travelmanticsrebranded.views.activities.MainActivity
 import kotlinx.android.synthetic.main.onboarding_view.view.*
 
@@ -29,10 +30,8 @@ class OnboardingView:FrameLayout,ViewPager.OnPageChangeListener {
         pagesList.addOnPageChangeListener(this)
         pageIndicator.setViewPager(pagesList)
 
-//        previousButton.setOnClickListener { pagesList.setCurrentItem(pagesList.currentItem - 1, true) }
-//        nextButton.setOnClickListener { pagesList.setCurrentItem(pagesList.currentItem + 1, true) }
         getting_started.setOnClickListener {
-           context.startActivity(Intent(context,MainActivity::class.java));
+           context.startActivity(Intent(context,ChooseSignIn::class.java));
         }
     }
     fun setAdapter(adapter: PagerAdapter) {

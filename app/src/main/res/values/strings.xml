@@ -17,5 +17,7 @@
     <string name="sub_title">Places and Events</string>
     <string name="tour_describe">Find the best places to spend your holiday</string>
     <string name="event_describe">Discover Events and Network with People Around the world</string>
+    <string name="sign_in_with_email">Sign in with Email</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
 
 </resources>

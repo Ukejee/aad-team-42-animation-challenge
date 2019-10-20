@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.activities.ChooseSignIn">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/travis_logo" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimens_40"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="@string/app_tit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/email_option"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="@dimen/dimens_32"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="@dimen/dimens_32"
+        android:background="@drawable/auth_blue_background"
+        android:drawableLeft="@drawable/email"
+        android:drawablePadding="@dimen/dimens_32"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dimens_32"
+        android:text="@string/sign_in_with_email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/google_option"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="@dimen/dimens_32"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:layout_marginEnd="@dimen/dimens_32"
+        android:background="@drawable/cv_background"
+        android:drawableLeft="@drawable/gmail"
+        android:drawablePadding="@dimen/dimens_32"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dimens_32"
+        android:text="@string/sign_in_with_google"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black" />
+
+</LinearLayout>
