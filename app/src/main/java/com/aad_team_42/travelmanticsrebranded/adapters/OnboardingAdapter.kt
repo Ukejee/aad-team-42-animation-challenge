@@ -1,4 +1,4 @@
-package com.aad_team_42.travelmanticsrebranded.activities.adapters
+package com.aad_team_42.travelmanticsrebranded.adapters
 
 import android.view.View
 import android.view.ViewGroup

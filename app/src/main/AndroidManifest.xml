@@ -19,7 +19,7 @@
             android:theme="@style/MainTheme">
 
         </activity>
-        <activity android:name=".activities.OnboardingActivity"
+        <activity android:name=".views.activities.OnboardingActivity"
             android:theme="@style/MainTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

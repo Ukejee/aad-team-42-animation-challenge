@@ -38,13 +38,13 @@
         android:id="@+id/getting_started"
         android:layout_width="456dp"
         android:layout_height="86dp"
-        android:layout_marginBottom="@dimen/dimens_16dp"
         android:background="@drawable/onboard_blue_background"
         android:text="@string/started"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
