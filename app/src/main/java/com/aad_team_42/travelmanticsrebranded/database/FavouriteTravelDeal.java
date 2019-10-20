@@ -1,9 +1,8 @@
 package com.aad_team_42.travelmanticsrebranded.database;
 
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
-import com.aad_team_42.travelmanticsrebranded.models.TravelDeal;
+import com.aad_team_42.travelmanticsrebranded.model.TravelDeal;
 
 /**
  * @author .: Ukeje Emeka
