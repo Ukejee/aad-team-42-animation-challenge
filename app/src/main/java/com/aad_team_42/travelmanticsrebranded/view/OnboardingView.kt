@@ -1,6 +1,7 @@
 package com.aad_team_42.travelmanticsrebranded.view
 
 import android.content.Context
+import android.content.Intent
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.aad_team_42.travelmanticsrebranded.R
+import com.aad_team_42.travelmanticsrebranded.views.activities.MainActivity
 import kotlinx.android.synthetic.main.onboarding_view.view.*
 
 class OnboardingView:FrameLayout,ViewPager.OnPageChangeListener {
@@ -30,7 +32,7 @@ class OnboardingView:FrameLayout,ViewPager.OnPageChangeListener {
 //        previousButton.setOnClickListener { pagesList.setCurrentItem(pagesList.currentItem - 1, true) }
 //        nextButton.setOnClickListener { pagesList.setCurrentItem(pagesList.currentItem + 1, true) }
         getting_started.setOnClickListener {
-            Toast.makeText(context, "finished", Toast.LENGTH_SHORT).show()
+           context.startActivity(Intent(context,MainActivity::class.java));
         }
     }
     fun setAdapter(adapter: PagerAdapter) {
