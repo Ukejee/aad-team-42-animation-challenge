@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="250dp"
         android:fontFamily="@font/cinzel_decorative"
-        android:text="Places and Events"
+        android:text="@string/app_tit"
         android:textColor="#1A1A1A"
         android:textSize="24sp"
         android:textStyle="bold"
