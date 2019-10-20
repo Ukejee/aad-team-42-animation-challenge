@@ -12,6 +12,6 @@ public class RegisterActivity extends BaseActivity {
     }
 
     private void RegisterUser(String email, String password){
-        FirebaseUtils.signUpUser(this, email, password);
+        FirebaseUtils.signUpUserWithEmail(this, email, password);
     }
 }
