@@ -17,6 +17,7 @@ import io.reactivex.subscribers.DisposableSubscriber;
  * @email ..: ukejee3@gmail.com
  * @created : 10/18/19
  */
+
 public class TravelDealRepository {
 
     private Context context;

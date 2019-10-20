@@ -1,6 +1,6 @@
 package com.aad_team_42.travelmanticsrebranded.views.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
@@ -9,12 +9,16 @@ import android.view.Menu;
 
 import com.aad_team_42.travelmanticsrebranded.R;
 import com.aad_team_42.travelmanticsrebranded.adapters.ViewPagerAdapter;
+import com.aad_team_42.travelmanticsrebranded.utils.FirebaseUtils;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
+    private FirebaseAuth.AuthStateListener listener;
     Toolbar toolbar;
     TabLayout tabLayout;
-    private int tabIcons[] = {
+    private int[] tabIcons = {
             R.drawable.explore, R.drawable.favorite
     };
 
@@ -33,8 +37,31 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setUpTabIcons();
+        setUpListener();
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUtils.attachStateListener(listener);
+    }
 
+    @Override
+    protected void onStop() {
+        FirebaseUtils.detachStateListener(listener);
+        super.onStop();
+    }
+
+    private void setUpListener(){
+        listener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null){
+//                    moveToActivity(MainActivity.this, LoginActivity.class);
+                }
+            }
+        };
     }
 
     @Override
