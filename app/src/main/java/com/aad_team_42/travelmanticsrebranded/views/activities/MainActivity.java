@@ -19,7 +19,7 @@ public class MainActivity extends BaseActivity {
     Toolbar toolbar;
     TabLayout tabLayout;
     private int[] tabIcons = {
-            R.drawable.explore, R.drawable.favorite
+            R.drawable.explore, R.drawable.favorite,R.drawable.event
     };
 
     @Override
@@ -74,5 +74,6 @@ public class MainActivity extends BaseActivity {
     private void setUpTabIcons() {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
     }
 }

@@ -27,6 +27,7 @@ public class TravelDeal implements Serializable {
         this.imageName = imageName;
     }*/
 
+
     public int getId() {
         return id;
     }
