@@ -43,7 +43,7 @@ public class FirebaseUtils {
 
     private static void initializeGoogleSignIn(Context context){
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(context.getString(R.string.default_web_client_id))
+                .requestIdToken(context.getString(R.string.my_default_web_client_id))
                 .requestEmail()
                 .build();
         mClient = new WeakReference<>(GoogleSignIn.getClient(context, gso));
