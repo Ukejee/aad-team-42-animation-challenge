@@ -19,5 +19,14 @@
     <string name="event_describe">Discover Events and Network with People Around the world</string>
     <string name="sign_in_with_email">Sign in with Email</string>
     <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="retype_your_password">Retype your password</string>
+    <string name="confirm_password">Confirm Password:</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="password">Password:</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="email">Email:</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="name">Name:</string>
 
 </resources>
