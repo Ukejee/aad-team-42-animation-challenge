@@ -10,7 +10,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimens_25"
+        android:layout_marginStart="@dimen/dimens_25dp"
         android:layout_marginTop="@dimen/dimens_16dp"
         android:fontFamily="@font/montserrat"
         android:text="@string/tour_title"
@@ -20,12 +20,12 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimens_25"
+        android:layout_marginStart="@dimen/dimens_25dp"
         android:layout_marginTop="@dimen/dimens_8dp"
-        android:layout_marginEnd="@dimen/dimens_25"
+        android:layout_marginEnd="@dimen/dimens_25dp"
         android:background="@drawable/cv_background"
         app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="@dimen/dimens_4"
+        app:cardCornerRadius="@dimen/dimen_4dp"
         app:cardUseCompatPadding="true">
         <LinearLayout
             android:background="@drawable/cv_background"
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tour_detail"
                 android:layout_marginStart="@dimen/dimens_8dp"
-                android:layout_marginTop="@dimen/dimens_25"
+                android:layout_marginTop="@dimen/dimens_25dp"
                 android:layout_toEndOf="@+id/image_tour"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/price"
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tour_detail"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="@dimen/dimens_40"
+                android:layout_marginTop="@dimen/dimens_40dp"
                 android:padding="8dp"
                 android:src="@drawable/favorite_black" />
 

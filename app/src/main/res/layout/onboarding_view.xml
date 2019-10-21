@@ -38,7 +38,7 @@
         android:id="@+id/getting_started"
         android:layout_width="456dp"
         android:layout_height="86dp"
-        android:layout_marginBottom="@dimen/dimens_32"
+        android:layout_marginBottom="@dimen/dimens_32dp"
         android:background="@drawable/clickable"
         android:text="@string/started"
         android:textColor="@color/white"
@@ -53,14 +53,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="16dp" />
+        app:layout_constraintGuide_begin="@dimen/dimens_16dp" />
 
 
     <com.rd.PageIndicatorView
         android:id="@+id/pageIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="@dimen/dimens_50dp"
         app:layout_constraintEnd_toEndOf="@id/pagesList"
         app:layout_constraintStart_toStartOf="@id/pagesList"
         app:layout_constraintBottom_toTopOf="@+id/getting_started"

@@ -22,16 +22,15 @@ import io.reactivex.Single;
 interface FavouriteTravelDealDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-
-    void insertFavouriteTravelDeals(FavouriteTravelDeal... favouriteTravelDeal);
+    Completable insertFavouriteTravelDeals(FavouriteTravelDeal... favouriteTravelDeal);
 
     @Delete
-    void deleteFavouriteTravelDeal(FavouriteTravelDeal favouriteTravelDeal);
+    Completable deleteFavouriteTravelDeal(FavouriteTravelDeal favouriteTravelDeal);
 
     @Query("SELECT * FROM favourite_travel_deals")
-    List<FavouriteTravelDeal> fetchAllCountries();
+    Flowable<List<FavouriteTravelDeal>> fetchAllFavourites();
 
     @Query("SELECT * FROM favourite_travel_deals WHERE title =:travelDealTitle")
-    FavouriteTravelDeal fetchFavouriteTravalDealByName(String travelDealTitle);
+    Single<FavouriteTravelDeal> fetchFavouriteByName(String travelDealTitle);
 
 }
