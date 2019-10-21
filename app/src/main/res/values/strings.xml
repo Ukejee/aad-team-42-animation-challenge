@@ -3,12 +3,10 @@
     <string name="app_name">TravelMantics</string>
     <string name="Email_view">Email:</string>
     <string name="Email_box">Enter your Email</string>
-    <string name="password">Password?</string>
     <string name="Password_box">Enter your password</string>
     <string name="Forgot_Password_text">Forgot Password?</string>
     <string name="Text_Button">Login</string>
     <string name="No_account">You don\'t have an account?</string>
-    <string name="sign_up">Sign up</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -18,4 +16,24 @@
     <string name="tour_title">Dubai Airport</string>
     <string name="tour_detail">Dubai is a very fun place to be with</string>
     <string name="price">fees $3000</string>
+
+    <string name="app_tit">Places and Events</string>
+
+    <string name="started">Getting Started</string>
+    <string name="title"><![CDATA[P & E]]></string>
+    <string name="sub_title">Places and Events</string>
+    <string name="tour_describe">Find the best places to spend your holiday</string>
+    <string name="event_describe">Discover Events and Network with People Around the world</string>
+    <string name="sign_in_with_email">Sign in with Email</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="retype_your_password">Retype your password</string>
+    <string name="confirm_password">Confirm Password:</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="password">Password:</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="email">Email:</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="name">Name:</string>
+
 </resources>

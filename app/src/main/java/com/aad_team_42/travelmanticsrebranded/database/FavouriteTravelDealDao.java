@@ -6,9 +6,12 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.aad_team_42.travelmanticsrebranded.models.TravelDeal;
-
 import java.util.List;
+
+import io.reactivex.Completable;
+import io.reactivex.Flowable;
+import io.reactivex.Observable;
+import io.reactivex.Single;
 
 /**
  * @author .: Ukeje Emeka
@@ -19,14 +22,14 @@ import java.util.List;
 interface FavouriteTravelDealDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertFavouriteTravelDeals(FavouriteTravelDeal... favouriteTravelDeal);
+    Completable insertFavouriteTravelDeals(FavouriteTravelDeal... favouriteTravelDeal);
 
     @Delete
-    void deleteFavouriteTravelDeal(FavouriteTravelDeal favouriteTravelDeal);
+    Completable deleteFavouriteTravelDeal(FavouriteTravelDeal favouriteTravelDeal);
 
     @Query("SELECT * FROM favourite_travel_deals")
-    List<FavouriteTravelDeal> fetchAllCountries();
+    Flowable<List<FavouriteTravelDeal>> fetchAllFavourites();
 
     @Query("SELECT * FROM favourite_travel_deals WHERE title =:travelDealTitle")
-    FavouriteTravelDeal fetchFavouriteTravalDealByName(String travelDealTitle);
+    Single<FavouriteTravelDeal> fetchFavouriteByName(String travelDealTitle);
 }

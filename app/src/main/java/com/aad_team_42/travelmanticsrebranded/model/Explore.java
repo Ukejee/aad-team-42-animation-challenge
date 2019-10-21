@@ -1,4 +1,4 @@
-package com.aad_team_42.travelmanticsrebranded.activities.model;
+package com.aad_team_42.travelmanticsrebranded.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
