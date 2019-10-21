@@ -39,7 +39,7 @@
         android:layout_width="456dp"
         android:layout_height="86dp"
         android:layout_marginBottom="@dimen/dimens_32"
-        android:background="@drawable/onboard_blue_background"
+        android:background="@drawable/clickable"
         android:text="@string/started"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
