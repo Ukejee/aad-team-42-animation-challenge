@@ -2,6 +2,7 @@ package com.aad_team_42.travelmanticsrebranded.utils;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -37,7 +38,7 @@ public class FirebaseUtils {
     private static FirebaseUtils firebaseUtils;
     private static FirebaseAuth mAuth;
 
-    public static FirebaseDatabase mDatabase;
+    private static FirebaseDatabase mDatabase;
     public static DatabaseReference mRef;
 
     private static WeakReference<GoogleSignInClient> mClient;
@@ -46,18 +47,16 @@ public class FirebaseUtils {
     }
 
 
-    public static void initializeFirebase(Context context) {
+    public static void initializeFirebase() {
         if (firebaseUtils == null) {
             firebaseUtils = new FirebaseUtils();
             mAuth = FirebaseAuth.getInstance();
             mDatabase = FirebaseDatabase.getInstance();
             mRef = mDatabase.getReference().child("explore");
-            initializeGoogleSignIn(context);
-
         }
     }
 
-    private static void initializeGoogleSignIn(Context context) {
+    public static void initializeGoogleSignIn(Context context) {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(context.getString(R.string.my_default_web_client_id))
                 .requestEmail()
