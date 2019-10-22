@@ -4,25 +4,25 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Explore implements Parcelable {
-    private String title, detail, price, id, image_url;
+    private String destination, about, price, id, imageUrl;
 
     public Explore() {
     }
 
-    public Explore(String title, String detail, String price, String id, String image_url) {
-        this.title = title;
-        this.detail = detail;
+    public Explore(String destination, String about, String price, String id, String imageUrl) {
+        this.destination = destination;
+        this.about = about;
         this.price = price;
         this.id = id;
-        this.image_url = image_url;
+        this.imageUrl = imageUrl;
     }
 
     protected Explore(Parcel in) {
-        title = in.readString();
-        detail = in.readString();
+        destination = in.readString();
+        about = in.readString();
         price = in.readString();
         id = in.readString();
-        image_url = in.readString();
+        imageUrl = in.readString();
     }
 
     @Override
@@ -32,11 +32,11 @@ public class Explore implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(title);
-        dest.writeString(detail);
+        dest.writeString(destination);
+        dest.writeString(about);
         dest.writeString(price);
         dest.writeString(id);
-        dest.writeString(image_url);
+        dest.writeString(imageUrl);
     }
 
     public static final Creator<Explore> CREATOR = new Creator<Explore>() {
@@ -51,20 +51,20 @@ public class Explore implements Parcelable {
         }
     };
 
-    public String getTitle() {
-        return title;
+    public String getDestination() {
+        return destination;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
-    public String getDetail() {
-        return detail;
+    public String getAbout() {
+        return about;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
+    public void setAbout(String about) {
+        this.about = about;
     }
 
     public String getPrice() {
@@ -83,12 +83,12 @@ public class Explore implements Parcelable {
         this.id = id;
     }
 
-    public String getImage_url() {
-        return image_url;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
 

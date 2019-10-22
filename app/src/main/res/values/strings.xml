@@ -36,5 +36,6 @@
     <string name="email">Email:</string>
     <string name="enter_your_name">Enter your name</string>
     <string name="name">Name:</string>
+    <string name="network_error">fetching data.. make sure you are connected to internet</string>
 
 </resources>
