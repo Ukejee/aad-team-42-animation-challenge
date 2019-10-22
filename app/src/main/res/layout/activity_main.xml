@@ -13,7 +13,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         app:navigationIcon="@drawable/white_logo"
-        app:title="@string/app_title"
+        app:title="@string/app_tit"
         app:titleTextColor="@color/white" />
 
     <com.google.android.material.tabs.TabLayout
