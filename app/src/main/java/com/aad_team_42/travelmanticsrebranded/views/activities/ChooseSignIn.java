@@ -24,8 +24,6 @@ import java.lang.ref.WeakReference;
 public class ChooseSignIn extends BaseActivity implements View.OnClickListener {
     private static final String TAG = ChooseSignIn.class.getSimpleName();
     TextView emailTv, googleTv;
-    private static final int RC_SIGN_IN = 100;
-    private GoogleSignInClient mClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +37,6 @@ public class ChooseSignIn extends BaseActivity implements View.OnClickListener {
         googleTv = findViewById(R.id.google_option);
         emailTv.setOnClickListener(this);
         googleTv.setOnClickListener(this);
-        FirebaseUtils.initializeGoogleSignIn(this);
-        mClient = FirebaseUtils.getGoogleClient();
-    }
-
-    private void loginUserWithGoogle(){
-        Intent intent = mClient.getSignInIntent();
-        startActivityForResult(intent, RC_SIGN_IN);
     }
 
     @Override

@@ -11,9 +11,14 @@ import android.view.MenuItem;
 import com.aad_team_42.travelmanticsrebranded.R;
 import com.aad_team_42.travelmanticsrebranded.adapters.ViewPagerAdapter;
 import com.aad_team_42.travelmanticsrebranded.utils.FirebaseUtils;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.UserInfo;
+
+import java.util.List;
 
 public class MainActivity extends BaseActivity {
     private FirebaseAuth.AuthStateListener listener;
@@ -60,6 +65,7 @@ public class MainActivity extends BaseActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user == null){
                     moveToActivity(MainActivity.this, ChooseSignIn.class);
+                    finish();
                 }
             }
         };

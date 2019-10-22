@@ -6,7 +6,6 @@
     <dimen name="dimens_16dp">16dp</dimen>
     <dimen name="dimen_4dp">4dp</dimen>
     <dimen name="dimens_32dp">32dp</dimen>
-    <dimen name="dimens_32sp">32sp</dimen>
     <dimen name="dimens_14sp">14sp</dimen>
     <dimen name="dimens_50dp">50dp</dimen>
     <dimen name="dimens_100dp">100dp</dimen>

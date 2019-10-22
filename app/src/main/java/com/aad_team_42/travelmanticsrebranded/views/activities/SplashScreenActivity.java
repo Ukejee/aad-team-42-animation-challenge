@@ -1,18 +1,16 @@
 package com.aad_team_42.travelmanticsrebranded.views.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.aad_team_42.travelmanticsrebranded.R;
+import com.aad_team_42.travelmanticsrebranded.utils.PreferencesUtils;
 
-public class SplashScreenActivity extends AppCompatActivity {
+public class SplashScreenActivity extends BaseActivity {
 
     ImageView logo;
 
@@ -28,10 +26,14 @@ public class SplashScreenActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(new Intent(getApplicationContext(), OnboardingActivity.class));
-                finish();
+                if (PreferencesUtils.openedBefore()) {
+                    moveToActivity(SplashScreenActivity.this, MainActivity.class);
+                    finish();
+                } else {
+                    moveToActivity(SplashScreenActivity.this, OnboardingActivity.class);
+                    finish();
+                    PreferencesUtils.setOpened(true);
+                }
             }
         }, 2000);
 
