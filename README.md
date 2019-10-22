@@ -24,14 +24,14 @@ Screenshots
 </td>
 <td>
 
-![Onboard2 screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/Onboard1.pngg)
+![Onboard2 screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/Onboard1.png)
 
 </td>
 </tr>
 <tr>
 <td>
 
-![explore screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deployr/screenshots/Explore.png)
+![explore screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/Explore.png)
 
 </td>
 <td>
@@ -40,8 +40,11 @@ Screenshots
 ![SignIn option screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/chooseSignIn.png)
 
 </td>
-
 </tr>
-
-
 </table>
+
+### Libraries used and their documentation
+
+- Firebase [Docs](https://firebase.google.com/docs/android/)
+- Room [Docs](https://developer.android.com/reference/android/arch/persistence/room/Room/)
+- Glide [Docs](https://github.com/bumptech/glide)
