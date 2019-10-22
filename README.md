@@ -13,31 +13,31 @@ Screenshots
 <tr>
 <td>
 
-![Splash Screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/master/screenshots/splash.png)
+![Splash Screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/splash.png)
 
 </td>
 <td>
 
 
-![Onboard1 screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/master/screenshots/onboard2.png)
+![Onboard1 screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/onboard2.png)
 
 </td>
 <td>
 
-![Onboard2 screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/master/screenshots/Onboard1.pngg)
+![Onboard2 screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/Onboard1.pngg)
 
 </td>
 </tr>
 <tr>
 <td>
 
-![explore screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/master/screenshots/Explore.png)
+![explore screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deployr/screenshots/Explore.png)
 
 </td>
 <td>
 
 
-![SignIn option screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/master/screenshots/chooseSignIn.png)
+![SignIn option screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/chooseSignIn.png)
 
 </td>
 
