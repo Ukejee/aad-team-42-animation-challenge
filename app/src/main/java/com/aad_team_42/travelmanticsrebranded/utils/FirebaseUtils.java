@@ -3,6 +3,8 @@ package com.aad_team_42.travelmanticsrebranded.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,8 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -75,6 +79,7 @@ public class FirebaseUtils {
                             Log.d(TAG, "User successfully logged in");
                             FirebaseUser user = mAuth.getCurrentUser();
                             context.moveToActivity(user, context, MainActivity.class);
+                            context.finish();
                         } else {
                             Log.w(TAG, "Sign in failed: ", task.getException());
                         }
@@ -92,6 +97,7 @@ public class FirebaseUtils {
                             Log.d(TAG, "User successfully logged in");
                             FirebaseUser user = mAuth.getCurrentUser();
                             context.moveToActivity(user, context, MainActivity.class);
+                            context.finish();
                         } else {
                             Log.w(TAG, "Sign in failed: ", task.getException());
                         }
@@ -99,7 +105,7 @@ public class FirebaseUtils {
                 });
     }
 
-    public static void signUpUserWithEmail(final SignUpActivity context, String email, String password){
+    public static void signUpUserWithEmail(final SignUpActivity context, final String name, String email, String password){
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(context, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -107,9 +113,28 @@ public class FirebaseUtils {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "User successfully created");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            context.moveToActivity(context, LoginActivity.class);
+                            if(user != null) {
+                                updateDisplayName(name, user);
+                                context.moveToActivity(context, LoginActivity.class);
+                                context.finish();
+                            }
                         } else {
                             Log.w(TAG, "Sign up failed: ", task.getException());
+                        }
+                    }
+                });
+    }
+
+    private static void updateDisplayName(String name, FirebaseUser user){
+        UserProfileChangeRequest request = new UserProfileChangeRequest.Builder()
+                .setDisplayName(name)
+                .build();
+        user.updateProfile(request)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            Log.d(TAG, "Profile successfully updated");
                         }
                     }
                 });
