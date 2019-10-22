@@ -7,9 +7,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-
 import com.aad_team_42.travelmanticsrebranded.R;
-import com.aad_team_42.travelmanticsrebranded.views.activities.BaseActivity;
 import com.aad_team_42.travelmanticsrebranded.views.activities.ChooseSignIn;
 import com.aad_team_42.travelmanticsrebranded.views.activities.MainActivity;
 import com.aad_team_42.travelmanticsrebranded.views.activities.LoginActivity;
