@@ -32,4 +32,5 @@ interface FavouriteTravelDealDao {
 
     @Query("SELECT * FROM favourite_travel_deals WHERE title =:travelDealTitle")
     Single<FavouriteTravelDeal> fetchFavouriteByName(String travelDealTitle);
+
 }

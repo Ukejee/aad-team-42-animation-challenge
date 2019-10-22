@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.aad_team_42.travelmanticsrebranded.R;
 import com.aad_team_42.travelmanticsrebranded.adapters.ExploreAdapter;
@@ -31,6 +33,8 @@ public class ExploreFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private ExploreAdapter mAdapter;
     private ChildEventListener mChildEventLisener;
+    private ProgressBar progressBar;
+    TextView tvError;
 
     public ExploreFragment() {
         // Required empty public constructor
@@ -42,6 +46,8 @@ public class ExploreFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_explore, container, false);
+        progressBar = view.findViewById(R.id.progressBar);
+        tvError = view.findViewById(R.id.network_error);
         mAdapter = new ExploreAdapter();
 
         mRecyclerView = view.findViewById(R.id.recylerView);
@@ -52,7 +58,7 @@ public class ExploreFragment extends Fragment {
         return view;
     }
 
-    public void getData() {
+    private void getData() {
         mChildEventLisener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -61,7 +67,13 @@ public class ExploreFragment extends Fragment {
                 exploreList.add(explore);
                 // progressBar.setVisibility(View.GONE);
                 mAdapter.setExplore(exploreList, getContext());
-                mRecyclerView.setAdapter(mAdapter);
+                if (mRecyclerView != null) {
+                    progressBar.setVisibility(View.GONE);
+                    tvError.setVisibility(View.INVISIBLE);
+                    mRecyclerView.setAdapter(mAdapter);
+                }
+                progressBar.setVisibility(View.VISIBLE);
+                tvError.setVisibility(View.VISIBLE);
             }
 
             @Override

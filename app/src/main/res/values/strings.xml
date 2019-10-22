@@ -1,5 +1,15 @@
 <resources>
+    <string name="app_logo">app_logo</string>
     <string name="app_name">TravelMantics</string>
+    <string name="Email_view">Email:</string>
+    <string name="Email_box">Enter your Email</string>
+    <string name="Password_box">Enter your password</string>
+    <string name="Forgot_Password_text">Forgot Password?</string>
+    <string name="Text_Button">Login</string>
+    <string name="No_account">You don\'t have an account?</string>
+
+    <!--Please do not alter what is here-->
+    <string name="my_default_web_client_id">689457085607-dc61p0ea8t8ag9lfovc1bfgpnesf2v7b.apps.googleusercontent.com</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -19,5 +29,15 @@
     <string name="event_describe">Discover Events and Network with People Around the world</string>
     <string name="sign_in_with_email">Sign in with Email</string>
     <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="retype_your_password">Retype your password</string>
+    <string name="confirm_password">Confirm Password:</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="password">Password:</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="email">Email:</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="name">Name:</string>
+    <string name="network_error">fetching data.. make sure you are connected to internet</string>
 
 </resources>

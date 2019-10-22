@@ -20,7 +20,7 @@ public class ChooseSignIn extends AppCompatActivity {
         emailTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseSignIn.this, MainActivity.class));
+                startActivity(new Intent(ChooseSignIn.this, SignUpActivity.class));
             }
         });
         googleTv.setOnClickListener(new View.OnClickListener() {
