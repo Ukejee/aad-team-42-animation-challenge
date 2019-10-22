@@ -42,13 +42,22 @@ public class SignUpActivity extends BaseActivity implements View.OnClickListener
             return;
         }
 
+        String name = nameEdittext.getText().toString();
         String email = emailEdittext.getText().toString();
         String password = passwordEdittext.getText().toString();
-        FirebaseUtils.signUpUserWithEmail(this, email, password);
+        FirebaseUtils.signUpUserWithEmail(this, name, email, password);
     }
 
     private boolean validateSignupCredentials(){
         boolean valid = true;
+
+        String name = nameEdittext.getText().toString();
+        if (TextUtils.isEmpty(name)){
+            nameEdittext.setError("Required");
+            valid = false;
+        } else{
+            nameEdittext.setError(null);
+        }
 
         String email = emailEdittext.getText().toString();
         if (TextUtils.isEmpty(email)){
