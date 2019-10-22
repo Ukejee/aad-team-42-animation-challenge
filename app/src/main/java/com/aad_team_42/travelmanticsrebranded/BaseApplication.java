@@ -8,6 +8,6 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        FirebaseUtils.initializeFirebase(this);
+        FirebaseUtils.initializeFirebase();
     }
 }

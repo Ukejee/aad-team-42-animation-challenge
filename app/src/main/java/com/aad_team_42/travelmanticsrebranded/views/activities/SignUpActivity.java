@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.aad_team_42.travelmanticsrebranded.R;
 
-public class SignUpActivity extends AppCompatActivity {
+public class SignUpActivity extends BaseActivity {
 
     TextView signUpBtn;
 

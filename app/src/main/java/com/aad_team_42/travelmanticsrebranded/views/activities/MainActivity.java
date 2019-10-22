@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import com.aad_team_42.travelmanticsrebranded.R;
 import com.aad_team_42.travelmanticsrebranded.adapters.ViewPagerAdapter;
@@ -58,7 +59,7 @@ public class MainActivity extends BaseActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user == null){
-//                    moveToActivity(MainActivity.this, LoginActivity.class);
+                    moveToActivity(MainActivity.this, ChooseSignIn.class);
                 }
             }
         };
@@ -70,6 +71,17 @@ public class MainActivity extends BaseActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.profile:
+                break;
+            case R.id.logout:
+                FirebaseUtils.signOutUser(this);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     private void setUpTabIcons() {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);

@@ -7,6 +7,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.aad_team_42.travelmanticsrebranded.R;
+import com.aad_team_42.travelmanticsrebranded.views.activities.ChooseSignIn;
 import com.aad_team_42.travelmanticsrebranded.views.activities.MainActivity;
 import com.aad_team_42.travelmanticsrebranded.views.activities.RegisterActivity;
 import com.aad_team_42.travelmanticsrebranded.views.activities.LoginActivity;
@@ -33,15 +34,14 @@ public class FirebaseUtils {
 
     private FirebaseUtils(){}
 
-    public static void initializeFirebase(Context context){
+    public static void initializeFirebase(){
         if(firebaseUtils == null){
             firebaseUtils = new FirebaseUtils();
             mAuth = FirebaseAuth.getInstance();
-            initializeGoogleSignIn(context);
         }
     }
 
-    private static void initializeGoogleSignIn(Context context){
+    public static void initializeGoogleSignIn(ChooseSignIn context){
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(context.getString(R.string.my_default_web_client_id))
                 .requestEmail()
@@ -49,9 +49,9 @@ public class FirebaseUtils {
         mClient = new WeakReference<>(GoogleSignIn.getClient(context, gso));
     }
 
-    public static GoogleSignInClient getGoogleSignInClient(){ return mClient.get(); }
+    public static GoogleSignInClient getGoogleClient(){ return mClient.get(); }
 
-    public static void firebaseAuthWithGoogle(final LoginActivity context, GoogleSignInAccount account){
+    public static void firebaseAuthWithGoogle(final ChooseSignIn context, GoogleSignInAccount account){
         Log.d(TAG, "Account ID: " + account.getId());
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         mAuth.signInWithCredential(credential)
@@ -112,9 +112,9 @@ public class FirebaseUtils {
                 });
     }
 
-    public static void revokeAccess (Activity context){
+    public static void revokeAccess (Activity context, GoogleSignInClient mClient){
         mAuth.signOut();
-        mClient.get().revokeAccess()
+        mClient.revokeAccess()
                 .addOnCompleteListener(context, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
