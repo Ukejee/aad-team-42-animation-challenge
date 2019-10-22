@@ -6,13 +6,19 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import com.aad_team_42.travelmanticsrebranded.R;
 import com.aad_team_42.travelmanticsrebranded.adapters.ViewPagerAdapter;
 import com.aad_team_42.travelmanticsrebranded.utils.FirebaseUtils;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.UserInfo;
+
+import java.util.List;
 
 public class MainActivity extends BaseActivity {
     private FirebaseAuth.AuthStateListener listener;
@@ -58,7 +64,8 @@ public class MainActivity extends BaseActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user == null){
-//                    moveToActivity(MainActivity.this, LoginActivity.class);
+                    moveToActivity(MainActivity.this, ChooseSignIn.class);
+                    finish();
                 }
             }
         };
@@ -70,6 +77,17 @@ public class MainActivity extends BaseActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.profile:
+                break;
+            case R.id.logout:
+                FirebaseUtils.signOutUser(this);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     private void setUpTabIcons() {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);

@@ -2,7 +2,6 @@ package com.aad_team_42.travelmanticsrebranded.utils;
 
 
 import android.app.Activity;
-
 import android.content.Context;
 import android.util.Log;
 
@@ -10,10 +9,11 @@ import androidx.annotation.NonNull;
 
 
 import com.aad_team_42.travelmanticsrebranded.R;
-
+import com.aad_team_42.travelmanticsrebranded.views.activities.BaseActivity;
+import com.aad_team_42.travelmanticsrebranded.views.activities.ChooseSignIn;
 import com.aad_team_42.travelmanticsrebranded.views.activities.MainActivity;
-import com.aad_team_42.travelmanticsrebranded.views.activities.RegisterActivity;
 import com.aad_team_42.travelmanticsrebranded.views.activities.LoginActivity;
+import com.aad_team_42.travelmanticsrebranded.views.activities.SignUpActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -38,28 +38,25 @@ public class FirebaseUtils {
     private static FirebaseUtils firebaseUtils;
     private static FirebaseAuth mAuth;
 
-    public static FirebaseDatabase mDatabase;
+    private static FirebaseDatabase mDatabase;
     public static DatabaseReference mRef;
 
     private static WeakReference<GoogleSignInClient> mClient;
-
 
     private FirebaseUtils() {
     }
 
 
-    public static void initializeFirebase(Context context) {
+    public static void initializeFirebase() {
         if (firebaseUtils == null) {
             firebaseUtils = new FirebaseUtils();
             mAuth = FirebaseAuth.getInstance();
             mDatabase = FirebaseDatabase.getInstance();
             mRef = mDatabase.getReference().child("explore");
-            initializeGoogleSignIn(context);
-
         }
     }
 
-    private static void initializeGoogleSignIn(Context context) {
+    public static void initializeGoogleSignIn(Context context) {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(context.getString(R.string.my_default_web_client_id))
                 .requestEmail()
@@ -67,12 +64,9 @@ public class FirebaseUtils {
         mClient = new WeakReference<>(GoogleSignIn.getClient(context, gso));
     }
 
-    public static GoogleSignInClient getGoogleSignInClient() {
-        return mClient.get();
-    }
+    public static GoogleSignInClient getGoogleClient(){ return mClient.get(); }
 
-    public static void firebaseAuthWithGoogle(
-            final LoginActivity context, GoogleSignInAccount account) {
+    public static void firebaseAuthWithGoogle(final ChooseSignIn context, GoogleSignInAccount account){
         Log.d(TAG, "Account ID: " + account.getId());
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         mAuth.signInWithCredential(credential)
@@ -107,15 +101,7 @@ public class FirebaseUtils {
                 });
     }
 
-
-    public static void signUpUser(final RegisterActivity context, String email, String
-            password) {
-
-    }
-
-    public static void signUpUserWithEmail(final RegisterActivity context, String
-            email, String password) {
-
+    public static void signUpUserWithEmail(final SignUpActivity context, String email, String password){
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(context, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -123,7 +109,7 @@ public class FirebaseUtils {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "User successfully created");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            context.moveToActivity(user, context, LoginActivity.class);
+                            context.moveToActivity(context, LoginActivity.class);
                         } else {
                             Log.w(TAG, "Sign up failed: ", task.getException());
                         }

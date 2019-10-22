@@ -8,7 +8,7 @@ import com.aad_team_42.travelmanticsrebranded.view.OnboardingPage
 import com.aad_team_42.travelmanticsrebranded.view.OnboardingPageView
 import kotlinx.android.synthetic.main.onboarding.*
 
-class OnboardingActivity : AppCompatActivity(){
+class OnboardingActivity : BaseActivity(){
 
     private val adapter = OnboardingAdapter()
 

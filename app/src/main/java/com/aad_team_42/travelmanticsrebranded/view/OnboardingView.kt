@@ -31,7 +31,7 @@ class OnboardingView:FrameLayout,ViewPager.OnPageChangeListener {
         pageIndicator.setViewPager(pagesList)
 
         getting_started.setOnClickListener {
-           context.startActivity(Intent(context,ChooseSignIn::class.java));
+           context.startActivity(Intent(context,ChooseSignIn::class.java))
         }
     }
     fun setAdapter(adapter: PagerAdapter) {

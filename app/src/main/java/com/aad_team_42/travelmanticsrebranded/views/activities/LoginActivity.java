@@ -1,51 +1,87 @@
 package com.aad_team_42.travelmanticsrebranded.views.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-
+import com.aad_team_42.travelmanticsrebranded.R;
 import com.aad_team_42.travelmanticsrebranded.utils.FirebaseUtils;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.Task;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
     private static final String TAG = LoginActivity.class.getSimpleName();
-    private static final int RC_SIGN_IN = 100;
+    private EditText emailEdittext, passwordEdittext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.sign_in_with_mail);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        }
+
+        findViewById(R.id.tv_sign_up).setOnClickListener(this);
+        findViewById(R.id.button_login).setOnClickListener(this);
+        emailEdittext = findViewById(R.id.emailEditText);
+        passwordEdittext = findViewById(R.id.passwordEditText);
     }
 
-    private void LoginUserWithEmail(String email, String password){
+    private void loginUserWithEmail(){
+        if (!validateLoginCredentials()){
+            return;
+        }
+
+        String email = emailEdittext.getText().toString();
+        String password = passwordEdittext.getText().toString();
         FirebaseUtils.signInUserWithEmail(this, email, password);
     }
 
-    private void LoginUserWithGoogle(){
-        Intent intent = FirebaseUtils.getGoogleSignInClient().getSignInIntent();
-        startActivityForResult(intent, RC_SIGN_IN);
+    private boolean validateLoginCredentials(){
+        boolean valid = true;
+
+        String email = emailEdittext.getText().toString();
+        if (TextUtils.isEmpty(email)){
+            emailEdittext.setError("Required");
+            valid = false;
+        } else if (!email.contains("@")){
+            emailEdittext.setError("Invalid email address");
+            valid = false;
+        } else {
+            emailEdittext.setError(null);
+        }
+
+        String password = passwordEdittext.getText().toString();
+        if (TextUtils.isEmpty(password)) {
+            passwordEdittext.setError("Required");
+            valid = false;
+        } else if (password.length() < 8){
+            passwordEdittext.setError("Password must be up to 8 characters");
+            valid = false;
+        } else {
+            passwordEdittext.setError(null);
+        }
+        return valid;
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RC_SIGN_IN){
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                if (account!= null) {
-                    FirebaseUtils.firebaseAuthWithGoogle(this, account);
-                }
-            } catch (ApiException err){
-                Log.w(TAG, "Google sign in failed", err);
-            }
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.tv_sign_up:
+                moveToActivity(this, SignUpActivity.class);
+                break;
+            case R.id.button_login:
+                loginUserWithEmail();
+                break;
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }
