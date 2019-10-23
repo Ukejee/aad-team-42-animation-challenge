@@ -54,7 +54,7 @@ public class FirebaseUtils {
             firebaseUtils = new FirebaseUtils();
             mAuth = FirebaseAuth.getInstance();
             mDatabase = FirebaseDatabase.getInstance();
-            mRef = mDatabase.getReference().child("explore");
+            mRef = mDatabase.getReference();
         }
     }
 

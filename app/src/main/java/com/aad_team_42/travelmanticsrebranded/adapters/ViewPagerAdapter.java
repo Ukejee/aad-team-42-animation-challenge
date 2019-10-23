@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.aad_team_42.travelmanticsrebranded.views.fragments.EventFragment;
 import com.aad_team_42.travelmanticsrebranded.views.fragments.ExploreFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -26,7 +27,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
                 return new ExploreFragment();
 
             case 2:
-                return new ExploreFragment();
+                return new EventFragment();
         }
         return fragment;
     }

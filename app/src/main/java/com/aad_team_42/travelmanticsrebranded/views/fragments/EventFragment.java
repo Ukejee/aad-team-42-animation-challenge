@@ -2,21 +2,23 @@ package com.aad_team_42.travelmanticsrebranded.views.fragments;
 
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.aad_team_42.travelmanticsrebranded.R;
+import com.aad_team_42.travelmanticsrebranded.adapters.EventAdapter;
 import com.aad_team_42.travelmanticsrebranded.adapters.ExploreAdapter;
+import com.aad_team_42.travelmanticsrebranded.model.Event;
 import com.aad_team_42.travelmanticsrebranded.model.Explore;
 import com.aad_team_42.travelmanticsrebranded.utils.FirebaseUtils;
 import com.google.firebase.database.ChildEventListener;
@@ -29,14 +31,14 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ExploreFragment extends Fragment {
+public class EventFragment extends Fragment {
     private RecyclerView mRecyclerView;
-    private ExploreAdapter mAdapter;
+    private EventAdapter mAdapter;
     private ChildEventListener mChildEventLisener;
     private ProgressBar progressBar;
     TextView tvError;
 
-    public ExploreFragment() {
+    public EventFragment() {
         // Required empty public constructor
     }
 
@@ -45,12 +47,12 @@ public class ExploreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_explore, container, false);
+        View view = inflater.inflate(R.layout.fragment_event, container, false);
         progressBar = view.findViewById(R.id.progressBar);
         tvError = view.findViewById(R.id.network_error);
-        mAdapter = new ExploreAdapter();
+        mAdapter = new EventAdapter();
         mRecyclerView = view.findViewById(R.id.recylerView);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         getData();
 
 
@@ -61,20 +63,18 @@ public class ExploreFragment extends Fragment {
         mChildEventLisener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                List<Explore> exploreList = new ArrayList<>();
-                Explore explore = dataSnapshot.getValue(Explore.class);
-                exploreList.add(explore);
-                // progressBar.setVisibility(View.GONE);
-                mAdapter.setExplore(exploreList, getContext());
-                if (mRecyclerView == null) {
-                    progressBar.setVisibility(View.VISIBLE);
-                    tvError.setVisibility(View.VISIBLE);
-
-                }else {
-                    progressBar.setVisibility(View.GONE);
-                    tvError.setVisibility(View.INVISIBLE);
+                List<Event> eventList = new ArrayList<>();
+                Event event = dataSnapshot.getValue(Event.class);
+                eventList.add(event);
+                mAdapter.setEvent(eventList, getContext());
+                if (mRecyclerView != null) {
                     mRecyclerView.setAdapter(mAdapter);
+                    progressBar.setVisibility(View.GONE);
+                    tvError.setVisibility(View.GONE);
                 }
+                progressBar.setVisibility(View.GONE);
+                tvError.setVisibility(View.GONE);
+
             }
 
             @Override
@@ -97,6 +97,6 @@ public class ExploreFragment extends Fragment {
 
             }
         };
-        FirebaseUtils.mRef.child("explore").addChildEventListener(mChildEventLisener);
+        FirebaseUtils.mRef.child("event").addChildEventListener(mChildEventLisener);
     }
 }
