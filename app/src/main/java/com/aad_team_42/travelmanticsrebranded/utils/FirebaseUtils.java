@@ -70,6 +70,7 @@ public class FirebaseUtils {
 
     public static void firebaseAuthWithGoogle(final ChooseSignIn context, GoogleSignInAccount account){
         Log.d(TAG, "Account ID: " + account.getId());
+        context.showProgress();
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(context, new OnCompleteListener<AuthResult>() {
@@ -89,6 +90,7 @@ public class FirebaseUtils {
 
     public static void signInUserWithEmail(final LoginActivity context, String
             email, String password) {
+        context.showProgressDialog();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(context, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -106,6 +108,7 @@ public class FirebaseUtils {
     }
 
     public static void signUpUserWithEmail(final SignUpActivity context, final String name, String email, String password){
+        context.showProgressDialog();
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(context, new OnCompleteListener<AuthResult>() {
                     @Override

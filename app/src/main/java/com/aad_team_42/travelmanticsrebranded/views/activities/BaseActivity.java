@@ -1,13 +1,12 @@
 package com.aad_team_42.travelmanticsrebranded.views.activities;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 
 import com.aad_team_42.travelmanticsrebranded.utils.FirebaseUtils;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -20,6 +19,11 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         FirebaseUtils.initializeGoogleSignIn(this);
         mClient = FirebaseUtils.getGoogleClient();
     }
@@ -28,15 +32,12 @@ public class BaseActivity extends AppCompatActivity {
         Intent intent = new Intent(context, activity);
         intent.putExtra("User", user);
         startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void moveToActivity(Context context,  Class activity){
         Intent intent = new Intent(context, activity);
         startActivity(intent);
-    }
-
-    protected void loginUserWithGoogle(){
-        Intent intent = mClient.getSignInIntent();
-        startActivityForResult(intent, RC_SIGN_IN);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }

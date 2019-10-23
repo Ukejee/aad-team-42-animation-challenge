@@ -23,7 +23,6 @@ import java.lang.ref.WeakReference;
 
 public class ChooseSignIn extends BaseActivity implements View.OnClickListener {
     private static final String TAG = ChooseSignIn.class.getSimpleName();
-    TextView emailTv, googleTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +32,8 @@ public class ChooseSignIn extends BaseActivity implements View.OnClickListener {
     }
 
     public void init() {
-        emailTv = findViewById(R.id.email_option);
-        googleTv = findViewById(R.id.google_option);
-        emailTv.setOnClickListener(this);
-        googleTv.setOnClickListener(this);
+        findViewById(R.id.email_option).setOnClickListener(this);
+        findViewById(R.id.google_option).setOnClickListener(this);
     }
 
     @Override
@@ -55,6 +52,11 @@ public class ChooseSignIn extends BaseActivity implements View.OnClickListener {
         }
     }
 
+    private void loginUserWithGoogle(){
+        Intent intent = mClient.getSignInIntent();
+        startActivityForResult(intent, RC_SIGN_IN);
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -65,5 +67,12 @@ public class ChooseSignIn extends BaseActivity implements View.OnClickListener {
                 loginUserWithGoogle();
                 break;
         }
+    }
+
+    public void showProgress(){
+        findViewById(R.id.logo).setVisibility(View.INVISIBLE);
+        findViewById(R.id.logoTitle).setVisibility(View.INVISIBLE);
+        findViewById(R.id.email_option).setVisibility(View.INVISIBLE);
+        findViewById(R.id.google_option).setVisibility(View.INVISIBLE);
     }
 }

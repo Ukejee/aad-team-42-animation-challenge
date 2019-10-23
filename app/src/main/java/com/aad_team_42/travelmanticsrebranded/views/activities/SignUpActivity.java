@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.aad_team_42.travelmanticsrebranded.R;
@@ -15,6 +16,7 @@ public class SignUpActivity extends BaseActivity implements View.OnClickListener
 
     private EditText nameEdittext, emailEdittext, passwordEdittext, confirmPasswordEdittext;
     private TextView signUpbutton;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class SignUpActivity extends BaseActivity implements View.OnClickListener
         passwordEdittext = findViewById(R.id.password_edit_text);
         confirmPasswordEdittext = findViewById(R.id.confirm_password_edit_text);
         confirmPasswordEdittext.addTextChangedListener(confirmPasswordWatcher);
+        progressBar = findViewById(R.id.sgnProgressBar);
     }
 
     private void registerUser(){
@@ -115,5 +118,11 @@ public class SignUpActivity extends BaseActivity implements View.OnClickListener
     public boolean onSupportNavigateUp() {
         finish();
         return true;
+    }
+
+    public void showProgressDialog(){
+        progressBar.setIndeterminate(true);
+        progressBar.setVisibility(View.VISIBLE);
+        signUpbutton.setVisibility(View.GONE);
     }
 }

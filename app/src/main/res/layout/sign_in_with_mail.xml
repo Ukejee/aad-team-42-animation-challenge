@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -82,10 +83,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimens_16dp"
+            android:layout_marginBottom="@dimen/dimens_50dp"
             android:fontFamily="@font/montserrat"
             android:text="@string/No_account"
             android:textAlignment="textEnd"
             android:textColor="@color/app_black"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/button_login"
             app:layout_constraintTop_toBottomOf="@+id/button_login" />
 
@@ -114,6 +117,7 @@
             android:hint="@string/Email_box"
             android:inputType="textEmailAddress"
             android:textColor="@color/app_black"
+            android:textSize="@dimen/dimens_16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tv_Email"
             app:layout_constraintTop_toBottomOf="@+id/tv_Email" />
@@ -127,8 +131,9 @@
             android:background="@drawable/back"
             android:fontFamily="@font/montserrat"
             android:hint="@string/Password_box"
-            android:inputType="textPassword|numberPassword"
+            android:inputType="textPassword"
             android:textColor="@color/app_black"
+            android:textSize="@dimen/dimens_16sp"
             app:layout_constraintEnd_toEndOf="@+id/emailEditText"
             app:layout_constraintStart_toStartOf="@+id/tv_Password"
             app:layout_constraintTop_toBottomOf="@+id/tv_Password" />
@@ -145,6 +150,17 @@
             android:textColor="@color/white"
             android:textSize="@dimen/dimens_16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/passwordEditText"
+            app:layout_constraintStart_toStartOf="@+id/passwordEditText"
+            app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
+
+        <ProgressBar
+            android:id="@+id/lgnProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_60dp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@+id/passwordEditText"
             app:layout_constraintStart_toStartOf="@+id/passwordEditText"
             app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
