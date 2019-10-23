@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.aad_team_42.travelmanticsrebranded.R;
+import com.aad_team_42.travelmanticsrebranded.ZoomOutPageTransformer;
 import com.aad_team_42.travelmanticsrebranded.adapters.ViewPagerAdapter;
 import com.aad_team_42.travelmanticsrebranded.utils.FirebaseUtils;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -38,6 +39,7 @@ public class MainActivity extends BaseActivity {
         tabLayout = findViewById(R.id.tablayout);
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(pagerAdapter);
+        pager.setPageTransformer(true, new ZoomOutPageTransformer());
         tabLayout.setupWithViewPager(pager);
 
         toolbar = findViewById(R.id.toolbar);

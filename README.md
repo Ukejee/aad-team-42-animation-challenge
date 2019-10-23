@@ -16,24 +16,28 @@ Screenshots
 ![Splash Screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/splash.png)
 
 </td>
+
 <td>
 
 
 ![Onboard1 screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/onboard2.png)
 
 </td>
+
 <td>
 
 ![Onboard2 screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/Onboard1.png)
 
 </td>
 </tr>
+
 <tr>
 <td>
 
 ![explore screen](https://github.com/Ukejee/aad-team-42-animation-challenge/blob/deploy/screenshots/Explore.png)
 
 </td>
+
 <td>
 
 
