@@ -7,128 +7,156 @@
     android:orientation="vertical"
     tools:context=".views.activities.SignUpActivity">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-       <ImageView
-           android:id="@+id/logo"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_gravity="center"
-           android:layout_marginTop="@dimen/dimens_55dp"
-           android:src="@drawable/travis_logo" />
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimens_50dp"
+            android:src="@drawable/travis_logo" />
 
-       <TextView
-           android:textColor="@color/app_black"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginBottom="@dimen/dimens_40dp"
-           android:fontFamily="@font/montserrat"
-           android:gravity="center"
-           android:text="@string/app_tit"
-           android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_8dp"
+            android:layout_marginBottom="@dimen/dimens_40dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:text="@string/app_tit"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="@string/name"
-           android:textColor="@color/app_black"
-           android:textSize="@dimen/dimens_14sp"
-           android:layout_marginStart="@dimen/dimens_25dp"/>
+            android:textColor="@color/app_black"
+            android:textStyle="bold" />
 
-       <EditText
-           android:id="@+id/name_edit_text"
-           android:layout_width="match_parent"
-           android:layout_height="@dimen/dimens_50dp"
-           android:layout_marginTop="@dimen/dimen_4dp"
-           android:layout_marginStart="@dimen/dimens_25dp"
-           android:layout_marginEnd="@dimen/dimens_25dp"
-           android:hint="@string/enter_your_name"
-           android:paddingStart="@dimen/dimens_12dp"
-           android:paddingEnd="@dimen/dimens_12dp"
-           android:background="@drawable/caption_background"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens_25dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/name"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/dimens_14sp" />
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="@string/email"
-           android:textColor="@color/app_black"
-           android:textSize="@dimen/dimens_14sp"
-           android:layout_marginTop="@dimen/dimens_21dp"
-           android:layout_marginStart="@dimen/dimens_25dp"/>
+        <EditText
+            android:id="@+id/name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_50dp"
+            android:layout_marginStart="@dimen/dimens_25dp"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:layout_marginEnd="@dimen/dimens_25dp"
+            android:background="@drawable/caption_background"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/enter_your_name"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/dimens_12dp"
+            android:paddingEnd="@dimen/dimens_12dp"
+            android:textSize="@dimen/dimens_16sp" />
 
-       <EditText
-           android:id="@+id/email_edit_text"
-           android:layout_width="match_parent"
-           android:layout_height="@dimen/dimens_50dp"
-           android:layout_marginTop="@dimen/dimen_4dp"
-           android:layout_marginStart="@dimen/dimens_25dp"
-           android:layout_marginEnd="@dimen/dimens_25dp"
-           android:hint="@string/enter_your_email"
-           android:paddingStart="@dimen/dimens_12dp"
-           android:paddingEnd="@dimen/dimens_12dp"
-           android:background="@drawable/caption_background"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens_25dp"
+            android:layout_marginTop="@dimen/dimens_16dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/email"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/dimens_14sp" />
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="@string/password"
-           android:textColor="@color/app_black"
-           android:textSize="@dimen/dimens_14sp"
-           android:layout_marginTop="@dimen/dimens_21dp"
-           android:layout_marginStart="@dimen/dimens_25dp"/>
+        <EditText
+            android:id="@+id/email_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_50dp"
+            android:layout_marginStart="@dimen/dimens_25dp"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:layout_marginEnd="@dimen/dimens_25dp"
+            android:background="@drawable/caption_background"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/enter_your_email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/dimens_12dp"
+            android:paddingEnd="@dimen/dimens_12dp"
+            android:textSize="@dimen/dimens_16sp" />
 
-       <EditText
-           android:id="@+id/password_edit_text"
-           android:layout_width="match_parent"
-           android:layout_height="@dimen/dimens_50dp"
-           android:layout_marginTop="@dimen/dimen_4dp"
-           android:layout_marginStart="@dimen/dimens_25dp"
-           android:layout_marginEnd="@dimen/dimens_25dp"
-           android:hint="@string/enter_your_password"
-           android:paddingStart="@dimen/dimens_12dp"
-           android:paddingEnd="@dimen/dimens_12dp"
-           android:background="@drawable/caption_background"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens_25dp"
+            android:layout_marginTop="@dimen/dimens_16dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/password"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/dimens_14sp" />
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="@string/confirm_password"
-           android:textColor="@color/app_black"
-           android:textSize="@dimen/dimens_14sp"
-           android:layout_marginTop="21dp"
-           android:layout_marginStart="@dimen/dimens_25dp"/>
+        <EditText
+            android:id="@+id/password_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_50dp"
+            android:layout_marginStart="@dimen/dimens_25dp"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:layout_marginEnd="@dimen/dimens_25dp"
+            android:background="@drawable/caption_background"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/enter_your_password"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/dimens_12dp"
+            android:paddingEnd="@dimen/dimens_12dp"
+            android:textSize="@dimen/dimens_16sp" />
 
-       <EditText
-           android:id="@+id/confirm_password_edit_text"
-           android:layout_width="match_parent"
-           android:layout_height="@dimen/dimens_50dp"
-           android:layout_marginTop="@dimen/dimen_4dp"
-           android:layout_marginStart="@dimen/dimens_25dp"
-           android:layout_marginEnd="@dimen/dimens_25dp"
-           android:hint="@string/retype_your_password"
-           android:paddingStart="@dimen/dimens_12dp"
-           android:paddingEnd="@dimen/dimens_12dp"
-           android:background="@drawable/caption_background"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens_25dp"
+            android:layout_marginTop="@dimen/dimens_16dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/confirm_password"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/dimens_14sp" />
 
-       <TextView
-           android:id="@+id/sign_up_btn"
-           android:clickable="true"
-           android:focusable="true"
-           android:layout_width="match_parent"
-           android:layout_height="@dimen/dimens_50dp"
-           android:layout_marginStart="@dimen/dimens_25dp"
-           android:layout_marginTop="@dimen/dimens_60dp"
-           android:layout_marginEnd="@dimen/dimens_25dp"
-           android:layout_marginBottom="@dimen/dimens_50dp"
-           android:background="@drawable/clickable"
-           android:fontFamily="@font/montserrat"
-           android:gravity="center"
-           android:text="@string/sign_up"
-           android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-           android:textColor="@color/white" />
+        <EditText
+            android:id="@+id/confirm_password_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_50dp"
+            android:layout_marginStart="@dimen/dimens_25dp"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:layout_marginEnd="@dimen/dimens_25dp"
+            android:background="@drawable/caption_background"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/retype_your_password"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/dimens_12dp"
+            android:paddingEnd="@dimen/dimens_12dp"
+            android:textSize="@dimen/dimens_16sp" />
 
-   </LinearLayout>
+        <ProgressBar
+            android:id="@+id/sgnProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_60dp"
+            android:layout_marginBottom="@dimen/dimens_50dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/sign_up_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_50dp"
+            android:layout_marginStart="@dimen/dimens_25dp"
+            android:layout_marginTop="@dimen/dimens_60dp"
+            android:layout_marginEnd="@dimen/dimens_25dp"
+            android:layout_marginBottom="@dimen/dimens_50dp"
+            android:background="@drawable/clickable"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:text="@string/sign_up"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
 </ScrollView>

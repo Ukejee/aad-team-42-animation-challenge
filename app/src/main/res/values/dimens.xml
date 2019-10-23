@@ -15,4 +15,6 @@
     <dimen name="dimens_60dp">60dp</dimen>
     <dimen name="dimens_200dp">200dp</dimen>
     <dimen name="dimens_70dp">70dp</dimen>
+    <dimen name="dimens_18sp">18sp</dimen>
+    <dimen name="dimens_16sp">16sp</dimen>
 </resources>

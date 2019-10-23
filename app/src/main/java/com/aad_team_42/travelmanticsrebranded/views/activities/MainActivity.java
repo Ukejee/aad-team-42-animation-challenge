@@ -48,18 +48,6 @@ public class MainActivity extends BaseActivity {
         setUpListener();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUtils.attachStateListener(listener);
-    }
-
-    @Override
-    protected void onStop() {
-        FirebaseUtils.detachStateListener(listener);
-        super.onStop();
-    }
-
     private void setUpListener(){
         listener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -71,6 +59,18 @@ public class MainActivity extends BaseActivity {
                 }
             }
         };
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUtils.attachStateListener(listener);
+    }
+
+    @Override
+    protected void onStop() {
+        FirebaseUtils.detachStateListener(listener);
+        super.onStop();
     }
 
     @Override

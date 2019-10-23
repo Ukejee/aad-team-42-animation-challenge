@@ -35,7 +35,7 @@ public class SplashScreenActivity extends BaseActivity {
                     PreferencesUtils.setOpened(true);
                 }
             }
-        }, 2000);
+        }, 2500);
 
 
     }

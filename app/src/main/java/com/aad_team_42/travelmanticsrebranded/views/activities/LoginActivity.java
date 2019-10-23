@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.aad_team_42.travelmanticsrebranded.R;
@@ -13,6 +14,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
     private static final String TAG = LoginActivity.class.getSimpleName();
     private EditText emailEdittext, passwordEdittext;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +30,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         findViewById(R.id.button_login).setOnClickListener(this);
         emailEdittext = findViewById(R.id.emailEditText);
         passwordEdittext = findViewById(R.id.passwordEditText);
+        progressBar = findViewById(R.id.lgnProgressBar);
     }
 
     private void loginUserWithEmail(){
         if (!validateLoginCredentials()){
             return;
         }
-
         String email = emailEdittext.getText().toString();
         String password = passwordEdittext.getText().toString();
         FirebaseUtils.signInUserWithEmail(this, email, password);
@@ -83,5 +85,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     public boolean onSupportNavigateUp() {
         finish();
         return true;
+    }
+
+    public void showProgressDialog(){
+        progressBar.setIndeterminate(true);
+        progressBar.setVisibility(View.VISIBLE);
+        findViewById(R.id.button_login).setVisibility(View.INVISIBLE);
     }
 }

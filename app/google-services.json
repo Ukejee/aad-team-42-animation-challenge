@@ -1,6 +1,5 @@
 {
   "project_info": {
-
     "project_number": "689457085607",
     "firebase_url": "https://alc-team-42.firebaseio.com",
     "project_id": "alc-team-42",
@@ -15,6 +14,22 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "689457085607-5ek72m3qf87if5m8h3hm9kng08h140hn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aad_team_42.travelmanticsrebranded",
+            "certificate_hash": "9817383bddf54b49f4974afddfc2641538500ea3"
+          }
+        },
+        {
+          "client_id": "689457085607-sd5ffpveu49gh6t3bsdquq9rodk1osf8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aad_team_42.travelmanticsrebranded",
+            "certificate_hash": "d3a0980dd648ebf4d32e6a176bb339d3704e9658"
+          }
+        },
         {
           "client_id": "689457085607-vdgopfsep44i2obtlof80eeie7kjd8sn.apps.googleusercontent.com",
           "client_type": 1,

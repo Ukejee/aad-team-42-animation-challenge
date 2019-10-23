@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,17 +15,19 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/dimens_100dp"
         android:src="@drawable/travis_logo"
+        app:srcCompat="@mipmap/travis_logo"
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:textColor="@color/black"
+        android:id="@+id/logoTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dimens_40dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:text="@string/app_tit"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/email_option"
